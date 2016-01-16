@@ -1,6 +1,6 @@
-.container
+include ../../components/navbar/_navbar
 
-  <!--{{chart.chartData}}-->
+.sub-header
+  h1.text-center Alocações
 
-  .row
-    div(ng-if='chart.chartData' fc-chart fc-chart-type="Gantt" fc-data="chart.chartData" width="100%" ) 
+div(ng-if='chartCtrl.chartData' fc-chart fc-chart-type="Gantt" fc-data="chartCtrl.chartData" width="100%" )

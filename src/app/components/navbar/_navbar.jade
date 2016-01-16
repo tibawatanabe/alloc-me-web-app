@@ -1,0 +1,11 @@
+nav.navbar.navbar-default(ng-controller='NavbarController as navbar')
+  .container-fluid
+    .navbar-header
+      a.navbar-brand(href='https://github.com/Swiip/generator-gulp-angular')
+        img(src='assets/images/logo.png')
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(ui-sref='home') Controle Alocações
+        li.active
+          a(ui-sref='project.new') Criar Novo Projeto
