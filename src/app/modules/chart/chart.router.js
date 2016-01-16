@@ -1,6 +1,6 @@
 'use strict';
 
-function MainRouter($stateProvider) {
+function ChartRouter($stateProvider) {
   $stateProvider
     .state('chart', {
       url: '/chart',
