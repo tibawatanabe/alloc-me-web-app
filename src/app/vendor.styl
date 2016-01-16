@@ -5,9 +5,151 @@
 $navbar-inverse-link-color = #5AADBB
 $icon-font-path = "../../bower_components/bootstrap-stylus/fonts/"
 
+$brand-primary =       #363636
+$brand-success =       #737373
+$brand-info    =       #e6e6e6
+
+$body-bg =               #f7f7f7
+
+$font-family-base = "Proxima Nova", Helvetica, Arial, sans-serif
+
+$font-size-h1     = 24px
+$font-size-h2     = 20px
+
+$border-radius-base  =      0px
+$border-radius-large =      0px
+$border-radius-small =      0px
+
+
+$btn-primary-color =            #fff
+$btn-primary-bg =               $brand-primary
+$btn-primary-border =           $brand-primary
+
+$btn-default-color =            $brand-primary
+$btn-default-bg =               #f7f7f7
+$btn-default-border =           $brand-primary
+
+// Basics of a navbar
+$navbar-height =                  100px
+// $navbar-margin-bottom =           $line-height-computed
+// $navbar-border-radius =           $border-radius-base
+// $navbar-padding-horizontal =      floor($grid-gutter-width / 2)
+// $navbar-padding-vertical =        (($navbar-height - $line-height-computed) / 2)
+$navbar-collapse-max-height =     340px
+
+$navbar-default-color =           #777
+$navbar-default-bg =              #fff
+$navbar-default-border =          #fff
+
+// Navbar links
+$navbar-default-link-color =              $brand-primary
+$navbar-default-link-hover-color =        $brand-primary
+$navbar-default-link-hover-bg =           #fff
+
+
+$navbar-default-link-active-color =       #555
+$navbar-default-link-active-bg =          darken($navbar-default-bg, 6.5%)
+$navbar-default-link-disabled-color =     #ccc
+$navbar-default-link-disabled-bg =        transparent
+
+// Navbar brand label
+$navbar-default-brand-color =             $navbar-default-link-color
+$navbar-default-brand-hover-color =       darken($navbar-default-brand-color, 10%)
+$navbar-default-brand-hover-bg =          transparent
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg =         #ddd
+$navbar-default-toggle-icon-bar-bg =      #888
+$navbar-default-toggle-border-color =     #ddd
+
+
 /**
  *  Do not remove this comments bellow. It's the markers used by wiredep to inject
  *  stylus dependencies when defined in the bower.json of your dependencies
  */
 // bower:styl
 // endbower
+
+h1
+h2
+a
+  text-transform uppercase
+  letter-spacing 1px
+
+label
+  display inline-block
+  max-width 100% // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+  margin-bottom 5px
+  font-size 16px
+  text-transform uppercase
+  letter-spacing 1px
+  font-weight normal
+
+input[type="text"]
+input[type="date"]
+  color $brand-success
+  font-size 16px
+
+hr
+  margin-top 60px
+  margin-bottom 60px
+  background #c3c3c3
+  height 1px
+
+.navbar
+  margin-bottom 0px
+.navbar-default
+  .navbar-nav
+    font-size 16px
+    > .active > a
+      &,
+      &:hover,
+      &:focus
+        background #fff
+        font-weight bold
+  .navbar-brand
+    margin-top -22px
+    margin-left -15px
+
+    img
+      width 220px
+
+.row-mtl
+  margin-top 32px
+
+.row-mtm
+  margin-top 24px
+
+.form-group
+  margin-bottom 0px
+
+.checkbox
+  label
+    color $brand-success
+    font-size 16px
+    margin-right 40px
+
+    span
+      margin-left 8px
+
+.btn
+  text-transform uppercase
+  letter-spacing 1px
+  font-weight 600
+  letter-spacing 1px
+  padding 12px 68px
+
+  +.btn
+    margin-left 44px
+
+.img-circle
+  &.profile
+    width 44px
+    height 44px
+    margin-right 28px
+
+.sub-header
+  padding-bottom 10px
+  padding-top 10px
+  width 100%
+  background #fff

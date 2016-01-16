@@ -1,0 +1,55 @@
+.sub-header
+  h1.text-center Novo projeto
+
+.container
+  .alert.alert-danger.alert-dismissible.fade.in(role='alert' ng-if='projectCtrl.errorMessage')
+    button.close(type='button', data-dismiss='alert', aria-label='Close')
+      span(aria-hidden='true') ×
+    h4 Oops! Operação falhou!
+    p {{projectCtrl.errorMessage}}
+
+  form(ng-submit='projectCtrl.create(project)')
+    .row.row-mtl
+      .form-group.col-sm-12
+        label(for='projectName') Nome do Projeto
+        input.form-control(id='projectName' type='text', placeholder='' ng-model='project.name')
+
+    .row.row-mtl
+      .form-group.col-sm-12
+        label(for='subproject') Subprojeto
+        input.form-control(id='subproject' type='text', placeholder='' ng-model='project.subproject')
+
+    .row.row-mtl
+      .form-group.col-sm-12
+        label Tecnologias
+        .checkbox
+          label.checkbox-inline(ng-repeat='tech in projectCtrl.techList track by $index')
+            input(type='checkbox' ng-model='tech.use')
+            span {{tech.name}}
+
+    .row.row-mtm
+        .form-group.col-sm-6
+          label(for='begin') Início
+          input.form-control(id='begin' type='date', placeholder='' ng-model='project.beginDate')
+        .form-group.col-sm-6
+          label(for='end') Fim
+          input.form-control(id='end' type='date', placeholder='' ng-model='project.endDate')
+
+    .row.row-mtm
+      .col-xs-12
+        button.btn.btn-primary(type='submit') Continuar
+
+  hr
+
+  h2 Pessoas que podem te ajudar nesse projeto
+
+  .row.row-mtm
+    .col-xs-12
+      img.img-circle.profile(src="https://placehold.it/350x150" alt="...")
+      img.img-circle.profile(src="https://placehold.it/350x150" alt="...")
+      img.img-circle.profile(src="https://placehold.it/350x150" alt="...")
+
+  .row.row-mtl
+    .col-xs-12
+      a.btn.btn-primary() Confimar este time
+      a.btn.btn-default() Escolher outro time

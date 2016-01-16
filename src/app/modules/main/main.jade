@@ -1,5 +1,5 @@
+include ../../components/navbar/_navbar
 .container
-  div(ng-include="'app/components/navbar/navbar.html'")
   .jumbotron.text-center
     h1 'Allo, 'Allo!
     p.lead
@@ -9,7 +9,7 @@
     p
       a.btn.btn-lg.btn-success(ng-href='#') Splendid!
   .row
-    .col-sm-6.col-md-4(ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'")
+    .col-sm-6.col-md-4(ng-repeat="awesomeThing in mainCtrl.awesomeThings | orderBy:'rank'")
       .thumbnail
         img.pull-right(ng-src='assets/images/{{awesomeThing.logo}}', alt='{{awesomeThing.title}}')
         .caption

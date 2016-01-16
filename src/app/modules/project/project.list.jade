@@ -1,0 +1,5 @@
+.row
+  .col-sm-6.col-md-4(ng-repeat="project in projectCtrl.projectList track by $index")
+    a.thumbnail.text-center(ui-sref='project.detail({id: project.id})')
+      h3 awsome
+
