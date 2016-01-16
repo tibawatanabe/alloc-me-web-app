@@ -12,7 +12,8 @@
       EDIT    : '',
       DELETE  : '',
       GET     : '',
-      GET_ALL : ''
+      GET_ALL : '',
+      GET_SUGGESTION : 'http://alloc-me.herokuapp.com/v1/employees/get-employees-to-alloc?startDate=1&endDate=1452968377885&technologies=569aa44b85fd010300495e72'
     };
 
     function create(project) {
@@ -35,12 +36,17 @@
       return $http.get(Endpoints.GET, { data: { id: id } });
     }
 
+    function getSuggestion(start, end, tech) {
+      return $http.get(Endpoints.GET_SUGGESTION, { data: { startDate: start, endDate: end, technologies: tech } });
+    }
+
     return {
       create : create,
       edit   : edit,
       remove : remove,
       get    : get,
-      getAll : getAll
+      getAll : getAll,
+      getSuggestion : getSuggestion
     };
   };
 

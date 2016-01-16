@@ -8,7 +8,7 @@
     h4 Oops! Operação falhou!
     p {{projectCtrl.errorMessage}}
 
-  form(ng-submit='projectCtrl.create(project)')
+  form(ng-submit='projectCtrl.getSuggestion(projectCtrl.beginDate, projectCtrl.endDate)')
     .row.row-mtl
       .form-group.col-sm-12
         label(for='projectName') Nome do Projeto
@@ -30,26 +30,25 @@
     .row.row-mtm
         .form-group.col-sm-6
           label(for='begin') Início
-          input.form-control(id='begin' type='date', placeholder='' ng-model='project.beginDate')
+          input.form-control(id='begin' type='date', placeholder='' ng-model='projectCtrl.beginDate')
         .form-group.col-sm-6
           label(for='end') Fim
-          input.form-control(id='end' type='date', placeholder='' ng-model='project.endDate')
+          input.form-control(id='end' type='date', placeholder='' ng-model='projectCtrl.endDate')
 
     .row.row-mtm
       .col-xs-12
-        button.btn.btn-primary(type='submit') Continuar
+        button.btn.btn-primary(type='submit') Sugerir time
 
-  hr
+  div(ng-if='projectCtrl.users')
+    hr
 
-  h2 Pessoas que podem te ajudar nesse projeto
+    h2 Pessoas que podem te ajudar nesse projeto
 
-  .row.row-mtm
-    .col-xs-12
-      img.img-circle.profile(src="https://placehold.it/350x150" alt="...")
-      img.img-circle.profile(src="https://placehold.it/350x150" alt="...")
-      img.img-circle.profile(src="https://placehold.it/350x150" alt="...")
+    .row.row-mtm
+      .col-xs-12
+        img.img-circle.profile(ng-src="{{user.imgUrl}}" alt="..." ng-repeat='user in projectCtrl.users track by $index')
 
-  .row.row-mtl
-    .col-xs-12
-      a.btn.btn-primary() Confimar este time
-      a.btn.btn-default() Escolher outro time
+    .row.row-mtl.row-mbl
+      .col-xs-12
+        a.btn.btn-primary() Confimar este time
+        a.btn.btn-default() Escolher outro time

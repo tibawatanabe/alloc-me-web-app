@@ -17,7 +17,7 @@
 
     function parseData(data){
       var parsed;
-      
+
       var guy;
       var guys = [];
       var task;

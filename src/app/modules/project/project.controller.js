@@ -13,6 +13,14 @@
       { name: 'iOS' }
     ];
 
+    vm.beginDate = new Date();
+    vm.endDate   = new Date();
+
+    vm.getSuggestion = function(start, end) {
+      ProjectResource.getSuggestion(1, 1452968377885, '569aa44b85fd010300495e72')
+        .then(function (response) { vm.users = response.data.data.employees })
+    }
+
     vm.create = function(project) {
       project.techList = _.filter(vm.techList, 'use');
 

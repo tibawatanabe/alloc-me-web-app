@@ -12,22 +12,22 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/modules/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'mainCtrl'
+        templateUrl: 'app/modules/chart/chart.html',
+        controller: 'ChartController',
+        controllerAs: 'chartCtrl'
       });
 
     $urlRouterProvider.otherwise('/');
   }
 
   function ChartRouter($stateProvider) {
-    $stateProvider
-      .state('chart', {
-        url: '/chart',
-        templateUrl: 'app/modules/chart/chart.html',
-        controller: 'ChartController',
-        controllerAs: 'chartCtrl'
-      });
+    // $stateProvider
+    //   .state('home', {
+    //     url: '/',
+    //     templateUrl: 'app/modules/chart/chart.html',
+    //     controller: 'ChartController',
+    //     controllerAs: 'chartCtrl'
+    //   });
   }
 
   function ProjectRouter($stateProvider) {
