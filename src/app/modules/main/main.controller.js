@@ -6,8 +6,14 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController() {
+  function MainController(ProjectResource) {
+    debugger;
     var vm = this;
+
+    ProjectResource.getAll()
+      .then(function onGetAll(response) { console.log(response); })
+      .catch(function onGetAllError(response) { console.log(response); })
+      .finally(function onGetAllFinally() { console.log('Hooray!'); });
 
     vm.awesomeThings = [
       {
