@@ -8,7 +8,7 @@
     h4 Oops! Operação falhou!
     p {{projectCtrl.errorMessage}}
 
-  form(ng-submit='projectCtrl.getSuggestion(projectCtrl.beginDate, projectCtrl.endDate)')
+  form(ng-submit='projectCtrl.users = null || projectCtrl.getSuggestion(projectCtrl.beginDate, projectCtrl.endDate)')
     .row.row-mtl
       .form-group.col-sm-12
         label(for='projectName') Nome do Projeto

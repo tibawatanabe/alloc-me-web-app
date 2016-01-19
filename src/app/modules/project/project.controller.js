@@ -10,7 +10,8 @@
     vm.techList = [
       { name: 'WP' },
       { name: 'Android' },
-      { name: 'iOS' }
+      { name: 'iOS' },
+      { name: 'Angular' }
     ];
 
     vm.beginDate = new Date();
